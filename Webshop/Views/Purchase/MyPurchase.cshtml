@@ -1,0 +1,39 @@
+﻿@model int
+
+<div class="purchase">
+    @{
+        ViewBag.Title = "MyPurchase";
+    }
+
+    <h2>Kosár</h2>
+    <div class="row">
+        <div class="col col-sm-4">
+            <table cellpadding="2" cellspacing="2" border="1">
+                <tr>
+                    <th style="text-align:center">Termék</th>
+                    <th style="text-align:center">Méret</th>
+                    <th style="text-align:center">Ár</th>
+                </tr>
+                @foreach (Product p in (List<Product>)Session["Cart"])
+                {
+                    <tr>
+                        <td>@p.Name</td>
+                        <td>@p.Size.Value</td>
+                        <td>@p.Price Ft</td>
+                        <td><a href="@Url.Action("Remove", "Purchase", new { id = p.Id })"><span class="glyphicon glyphicon-trash" title="Törlés" style="color:rgb(0,0,0)" /></a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="col col-sm-6">
+            <strong>Összeg:&nbsp;&nbsp;@Model <span> Ft</span></strong><br><br>
+            @if (((List<Product>)Session["Cart"]).Count != 0)
+            {
+                @Html.ActionLink("Fizetés", "Payment", "Purchase", null, new { @class = "btn btn-primary" })
+            }
+        </div>
+    </div>
+</div><br>
+<div>
+    @Html.ActionLink("Vissza a termékekhez", "Index", "AllProducts", null, new { @class = "indexClass" })
+</div>

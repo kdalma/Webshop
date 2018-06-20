@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Webshop.Product>
+
+<div class="allProducts">
+    @{
+        ViewBag.Title = "Index";
+    }
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <h2>Válogasson kényelmesen, egyszerűen termékkínálatunkból!</h2>
+    <h4>Nálunk mindenki megtalálja az ízlésének valót</h4>
+
+    <p>
+        <div class="form-inline">
+        @using (Html.BeginForm("ProductsFilter", "AllProducts", FormMethod.Post))
+        {
+            <div class="form-group" id="searchForm">
+                @Html.TextBox("searchString", null, new { @class = "form-control" })
+            </div>
+            <div class="form-group" id="categorySearch">
+                @Html.DropDownList("categoryId", new SelectList(ViewBag.Categories, "Id", "Name"), new { @class = "form-control" })                
+            </div>
+            <input type="submit" value="Keresés" class="btn btn-primary" />
+        }
+        </div>
+    </p>
+
+    <div class="container container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 w3-container w3-center w3-animate-zoom">
+                    <a href='@Url.Action("Details", "AllProducts", new { Id = item.Id})'>
+                        <img src="@Url.Content(item.Image)" alt="Image" id="allProductsPicture"/><br>
+                    </a>
+                    <div class="datas">
+                        @Html.DisplayFor(modelItem => item.Name)<br>
+                        @Html.DisplayFor(modelItem => item.Price)   Ft<br>
+                    </div>
+                    <a href='@Url.Action("Details", "AllProducts", new { Id = item.Id})'>
+                        <strong>RÉSZLETEK</strong>
+                    </a><br><br><br>
+                </div>
+            }
+        </div>
+    </div>
+</div>

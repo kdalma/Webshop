@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop", "Webshop\Webshop.csproj", "{20B36E13-F7B3-4293-88B0-68EE2F6B5BB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop.Tests", "Webshop.Tests\Webshop.Tests.csproj", "{0D54F710-0E46-4E68-9B6B-84680DF492B9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WebshopDb", "WebshopDb\WebshopDb.sqlproj", "{CE5DE0B2-E998-44B5-B033-766DF31CE61A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B36E13-F7B3-4293-88B0-68EE2F6B5BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B36E13-F7B3-4293-88B0-68EE2F6B5BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B36E13-F7B3-4293-88B0-68EE2F6B5BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B36E13-F7B3-4293-88B0-68EE2F6B5BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D54F710-0E46-4E68-9B6B-84680DF492B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D54F710-0E46-4E68-9B6B-84680DF492B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D54F710-0E46-4E68-9B6B-84680DF492B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D54F710-0E46-4E68-9B6B-84680DF492B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5DE0B2-E998-44B5-B033-766DF31CE61A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C0429F1-838D-4E0C-92B0-EDD65C4963BD}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.n-ware.hu/tfs/reaktorlabs
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Webshop.Tests\\Webshop.Tests.csproj
+		SccProjectName1 = Webshop.Tests
+		SccLocalPath1 = Webshop.Tests
+		SccProjectUniqueName2 = Webshop\\Webshop.csproj
+		SccProjectName2 = Webshop
+		SccLocalPath2 = Webshop
+		SccProjectUniqueName3 = WebshopDb\\WebshopDb.sqlproj
+		SccProjectName3 = WebshopDb
+		SccLocalPath3 = WebshopDb
+	EndGlobalSection
+EndGlobal

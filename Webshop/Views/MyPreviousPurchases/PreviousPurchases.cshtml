@@ -1,0 +1,30 @@
+﻿@model List<Webshop.Models.PurchaseModel>
+
+@{
+    ViewBag.Title = "PreviousPurchases";
+}
+
+<h2>Előző vásárlásaim</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Vásárlás dátuma</th>
+        <th>Összeg</th>
+        <th>Terméke(i)m</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Date.ToShortDateString()</td>
+            <td>@item.TotalPrice Ft</td>
+            <td>
+                @foreach (var product in item.PurchaseProduct)
+                {
+                    <span>@product.Name</span><br>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,20 @@
+﻿@if (Session["email"] != null)
+{
+    using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Üdvözlünk " + Session["email"] + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Home" })
+        </li>
+        <li>@Html.ActionLink("Kijelentkezés", "LogOut", "Login")
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Bejelentkezés", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

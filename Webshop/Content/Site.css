@@ -1,0 +1,161 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,0);
+    color: rgba(28, 35, 135, 0.7);
+    font-family: 'Pacifico', cursive;
+}
+
+.jumbotron h1 {
+    color: rgba(28, 35, 135, 0.7);
+    font-family: 'Pacifico', cursive;
+}
+
+#logo {
+    padding-top: 2px;
+    width: 70px;
+}
+
+.navbar {
+    background-color: rgb(247, 2, 153);
+    border-color: rgba(122, 52, 82, 0.4);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: rgb(61, 61, 61);
+    font-family: 'Righteous', cursive;
+}
+
+.dropdown-menu li {
+    color: rgb(61, 61, 61);
+    font-family: 'Righteous', cursive;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: rgb(247, 2, 153);
+}
+
+
+.navbar-inverse .navbar-nav > dropdown-toggle {
+    background-color: rgb(247, 2, 153);
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: rgb(61, 61, 61);
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: rgb(0, 0, 0);
+    background-color: rgb(247, 2, 153);
+}
+
+h2, h4, .details {
+    color: rgb(61, 61, 61);
+    font-family: 'Roboto Slab', serif;
+}
+.details {
+    font-size: medium;
+    position: relative;
+}
+
+.detailText {
+    position: relative;
+    width: 300px;
+    padding-left: 50px;
+}
+
+.productName {
+    font-size: larger;
+    text-align: left;
+}
+
+a.indexClass {
+    color: rgb(114, 16, 16);
+}
+
+a.indexClass:hover {
+    color: rgb(119, 110, 110);
+}
+
+.contact, .contact h2, .footer, .logIn, .logIn h2, .allProducts, .allProducts h2, .allProducts h4, .purchase, .purchase h2 {
+    color: rgb(61, 61, 61);
+    font-family: 'Roboto Slab', serif;
+}
+
+.allProducts strong {
+    color: rgb(0, 0, 0);
+}
+
+.allProducts strong:hover {
+    color: rgb(247, 2, 153);
+}
+
+.allProducts a:hover {
+    text-decoration-line: none;
+}
+
+#detailsPicture {
+    height: 500px;
+}
+
+#cartBtn {
+    float: left;
+    color: rgb(61, 61, 61);
+    margin-right: 10px;
+}
+
+#favoriteBtn {
+    float: left;
+    color: rgb(61, 61, 61);
+}
+
+#searchForm {
+    margin-right: 10px;
+}
+
+#categorySearch {
+    margin-right: 10px;
+}
+
+#allProductsPicture {
+    height: 280px;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+.item div img {
+    height: 150px;
+    margin: auto;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,51 @@
+﻿@model Webshop.Models.AllProducts
+
+<div class="w3-container w3-left w3-animate-zoom">
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <h2>Részletek</h2>
+
+    <div class="details row">
+        <div class="col col-xs-12 col-md-6" @*style="height:500px; background-image:url(@Url.Content(Model.Image)); background-size: cover; background-repeat: no-repeat"*@>
+            <img id="detailsPicture" src="@Url.Content(Model.Image)" alt="Image"/><br>
+        </div>
+        <div class="detailText col col-xs-12 col-md-4">
+            <div id="addToCart">
+                @using (Html.BeginForm("Details", "AllProducts", new { Id = Model.Id, SizeId = Model.SizeId }, FormMethod.Post, null))
+                {
+                    <div class="productName">@Html.DisplayFor(modelItem => Model.Name)</div><br>
+                    @Html.DisplayFor(modelItem => Model.Description)<br><br>
+                    @Html.DisplayFor(modelItem => Model.Price) <span> Ft</span><br><br>
+                    @Html.DropDownListFor(modelItem => Model.SizeId, new SelectList(Model.AllSizes, "Id", "Value"))<br><br>
+
+                    if (Session["Cart"] != null)
+                    {
+                        <button type="submit" class="btn" id="cartBtn" data-toggle="tooltip" title="Kosár"><span class="glyphicon glyphicon-shopping-cart" /></button>
+                    }
+                }
+                @using (Html.BeginForm("MyFavorite", "Favorite", new { Id = Model.Id }, FormMethod.Post, null))
+                {
+                    if (Session["userId"] != null)
+                    {
+                        <button type="submit" class="btn" id="favoriteBtn" data-toggle="tooltip" title="Kedvencek" data-placement="top"><span class="glyphicon glyphicon-heart" /></button>
+                    }
+                }
+            </div><br><br>
+            <div>
+                @Html.ActionLink("Vissza a termékekhez", "Index", "AllProducts", new { @class = "indexClass" })
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+}

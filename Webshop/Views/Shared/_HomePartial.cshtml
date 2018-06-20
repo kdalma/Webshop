@@ -1,0 +1,10 @@
+﻿@model Webshop.Models.HomeModel
+
+<section id="productPhotos">
+    @foreach (var item in Model.Images)
+    {
+        <div>
+            <img src="@Url.Content(item)" alt="Image" style="height:80px" />
+        </div>
+    }
+</section>

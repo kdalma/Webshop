@@ -1,0 +1,96 @@
+﻿@model Webshop.Models.IndexModel
+
+@{
+    ViewBag.Title = "Kezdőlap";
+}
+<link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin-ext" rel="stylesheet">
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  @*animation*@
+
+
+<div class="jumbotron w3-container w3-animate-left">
+    @*animation*@
+    <h1>A divat nálunk kezdődik...</h1>
+    <p class="lead">Üdvözlünk webshopunkban!</p>
+</div>
+<div class="logIn w3-container w3-animate-left">
+    @if (Session["userId"] == null)
+    {
+        ViewBag.Title = "Jelentkezzen be";
+
+        <h2>@ViewBag.Title</h2><hr />
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-8">
+                    <section id="loginForm">
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            Html.ValidationSummary(true, "", new { @class = "text-danger" });
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Jelszó", new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.PlainTextPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.PlainTextPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Bejelentkezés" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        }
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="container text-center">
+    <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="2000" id="productscarousel">
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/blouse/1.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/jacket/1.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/skirt/1.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/t-shirt/6.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/dress/1.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/blouse/3.jpg" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/t-shirt/1.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/blouse/7.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/dress/2.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/jacket/2.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/t-shirt/5.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/blouse/4.jpg" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/dress/3.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/jacket/3.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/dress/4.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/skirt/3.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/blouse/6.jpg" class="img-responsive"></a></div>
+                <div class="col-md-2 col-sm-4 col-xs-12"><a href="#"><img src="~/Content/products/t-shirt/4.jpg" class="img-responsive"></a></div>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#productscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#productscarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
